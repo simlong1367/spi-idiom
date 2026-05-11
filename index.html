@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>SPI 熟語 一問一答</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="app-container">
+        <header>
+            <div class="header-left">
+                <button id="menu-btn" class="icon-btn">☰</button>
+                <h1>SPI熟語対策</h1>
+            </div>
+            <div class="progress" id="progress-text">0 / 0</div>
+        </header>
+
+        <main>
+            <div class="card" id="flashcard">
+                <div class="card-content">
+                    <div class="furigana" id="furigana"></div>
+                    <div class="word" id="word">読込中...</div>
+                    <div class="meaning" id="meaning"></div>
+                </div>
+            </div>
+        </main>
+
+        <div class="controls">
+            <button class="btn" id="prev-btn">前へ</button>
+            <button class="btn" id="shuffle-btn">🔄</button>
+            <button class="btn btn-success" id="known-btn">覚えた！</button>
+            <button class="btn btn-primary" id="next-btn">次へ</button>
+        </div>
+    </div>
+
+    <!-- サイドメニュー（ドロワー） -->
+    <div class="overlay" id="overlay"></div>
+    <div class="drawer" id="drawer">
+        <div class="drawer-header">
+            <h2>全熟語一覧 (全210語)</h2>
+            <button id="close-btn" class="icon-btn">×</button>
+        </div>
+        <div class="drawer-tabs">
+            <button class="tab-btn active" id="tab-unknown">未学習</button>
+            <button class="tab-btn" id="tab-known">覚えた熟語</button>
+        </div>
+        <div class="drawer-content">
+            <div class="drawer-description">チェックを入れるとクイズから除外されます。</div>
+            <ul id="word-list-unknown" class="word-list"></ul>
+            <ul id="word-list-known" class="word-list hidden"></ul>
+        </div>
+    </div>
+
+    <script src="data.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
